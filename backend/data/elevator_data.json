@@ -1,0 +1,526 @@
+{
+  "meta": {
+    "note": "ALL DATA IN THIS FILE IS SIMULATED FOR DEMONSTRATION PURPOSES ONLY. It does not represent real KONE operational data, validated thresholds, or certified diagnostic rules."
+  },
+  "nominalTelemetry": {
+    "telemetrySnapshot": {
+      "motorCurrent": { "value": 7.6, "unit": "A", "status": "normal" },
+      "temperature": { "value": 46, "unit": "°C", "status": "normal" },
+      "vibration": { "value": 1.1, "unit": "mm/s", "status": "normal" },
+      "voltage": { "value": 379, "unit": "V", "status": "normal" },
+      "speed": { "value": 1.40, "unit": "m/s", "status": "normal" },
+      "doorStatus": { "value": "Normal", "unit": "", "status": "normal" }
+    },
+    "series": {
+      "motorCurrent": [
+        { "t": "10:00:00", "value": 7.4 },
+        { "t": "10:10:00", "value": 7.5 },
+        { "t": "10:20:00", "value": 7.5 },
+        { "t": "10:30:00", "value": 7.6 },
+        { "t": "10:40:00", "value": 7.6 }
+      ],
+      "temperature": [
+        { "t": "10:00:00", "value": 45 },
+        { "t": "10:10:00", "value": 45 },
+        { "t": "10:20:00", "value": 46 },
+        { "t": "10:30:00", "value": 46 },
+        { "t": "10:40:00", "value": 46 }
+      ],
+      "vibration": [
+        { "t": "10:00:00", "value": 1.0 },
+        { "t": "10:10:00", "value": 1.1 },
+        { "t": "10:20:00", "value": 1.1 },
+        { "t": "10:30:00", "value": 1.1 },
+        { "t": "10:40:00", "value": 1.1 }
+      ],
+      "speed": [
+        { "t": "10:00:00", "value": 1.40 },
+        { "t": "10:10:00", "value": 1.41 },
+        { "t": "10:20:00", "value": 1.40 },
+        { "t": "10:30:00", "value": 1.40 },
+        { "t": "10:40:00", "value": 1.40 }
+      ]
+    },
+    "events": [
+      { "time": "10:40:00", "message": "No anomalies detected — telemetry within normal simulated range", "severity": "info" }
+    ]
+  },
+  "elevators": [
+    {
+      "id": "KONE-E204",
+      "location": "Helsinki Tower, Block A",
+      "healthScore": 42,
+      "status": "critical",
+      "currentFault": "Drive System Abnormality",
+      "lastUpdated": "2026-08-14T10:31:49Z",
+      "scenarioId": "drive_overcurrent"
+    },
+    {
+      "id": "KONE-E117",
+      "location": "Espoo Business Park, Tower 2",
+      "healthScore": 68,
+      "status": "warning",
+      "currentFault": "Abnormal Vibration (Monitoring)",
+      "lastUpdated": "2026-08-14T09:12:03Z",
+      "scenarioId": "vibration_abnormal"
+    },
+    {
+      "id": "KONE-E103",
+      "location": "Vantaa Logistics Center",
+      "healthScore": 97,
+      "status": "healthy",
+      "currentFault": "None",
+      "lastUpdated": "2026-08-14T10:40:11Z",
+      "scenarioId": null
+    },
+    {
+      "id": "KONE-E221",
+      "location": "Turku Riverside Plaza",
+      "healthScore": 71,
+      "status": "warning",
+      "currentFault": "Cooling System Degradation",
+      "lastUpdated": "2026-08-14T08:55:27Z",
+      "scenarioId": "temperature_cooling"
+    },
+    {
+      "id": "KONE-E109",
+      "location": "Tampere Central Station",
+      "healthScore": 95,
+      "status": "healthy",
+      "currentFault": "None",
+      "lastUpdated": "2026-08-14T10:38:02Z",
+      "scenarioId": null
+    },
+    {
+      "id": "KONE-E118",
+      "location": "Oulu Harbor Complex",
+      "healthScore": 64,
+      "status": "warning",
+      "currentFault": "Door Mechanism Delay",
+      "lastUpdated": "2026-08-14T09:47:35Z",
+      "scenarioId": "door_mechanism"
+    }
+  ],
+  "scenarios": {
+    "drive_overcurrent": {
+      "id": "drive_overcurrent",
+      "label": "Scenario A — Drive / Motor Overcurrent",
+      "shortLabel": "Drive Overcurrent",
+      "defaultElevator": "KONE-E204",
+      "healthScore": 42,
+      "telemetrySnapshot": {
+        "motorCurrent": { "value": 18.7, "unit": "A", "status": "critical" },
+        "temperature": { "value": 91, "unit": "°C", "status": "critical" },
+        "vibration": { "value": 6.8, "unit": "mm/s", "status": "critical" },
+        "voltage": { "value": 380, "unit": "V", "status": "normal" },
+        "speed": { "value": 1.42, "unit": "m/s", "status": "normal" },
+        "doorStatus": { "value": "Normal", "unit": "", "status": "normal" }
+      },
+      "thresholds": {
+        "motorCurrent": 14.0,
+        "temperature": 75,
+        "vibration": 4.5
+      },
+      "series": {
+        "motorCurrent": [
+          { "t": "10:28:00", "value": 8.1 },
+          { "t": "10:28:30", "value": 8.3 },
+          { "t": "10:29:00", "value": 8.2 },
+          { "t": "10:29:30", "value": 8.6 },
+          { "t": "10:30:00", "value": 8.4 },
+          { "t": "10:30:30", "value": 9.1 },
+          { "t": "10:31:00", "value": 11.6 },
+          { "t": "10:31:15", "value": 14.9 },
+          { "t": "10:31:30", "value": 16.8 },
+          { "t": "10:31:42", "value": 18.7 },
+          { "t": "10:31:49", "value": 18.2 }
+        ],
+        "temperature": [
+          { "t": "10:28:00", "value": 44 },
+          { "t": "10:28:30", "value": 45 },
+          { "t": "10:29:00", "value": 47 },
+          { "t": "10:29:30", "value": 49 },
+          { "t": "10:30:00", "value": 53 },
+          { "t": "10:30:30", "value": 61 },
+          { "t": "10:31:00", "value": 70 },
+          { "t": "10:31:15", "value": 78 },
+          { "t": "10:31:30", "value": 85 },
+          { "t": "10:31:44", "value": 91 },
+          { "t": "10:31:49", "value": 90 }
+        ],
+        "vibration": [
+          { "t": "10:28:00", "value": 1.2 },
+          { "t": "10:28:30", "value": 1.3 },
+          { "t": "10:29:00", "value": 1.4 },
+          { "t": "10:29:30", "value": 1.6 },
+          { "t": "10:30:00", "value": 2.1 },
+          { "t": "10:30:30", "value": 3.0 },
+          { "t": "10:31:00", "value": 4.2 },
+          { "t": "10:31:15", "value": 5.4 },
+          { "t": "10:31:30", "value": 6.1 },
+          { "t": "10:31:47", "value": 6.8 },
+          { "t": "10:31:49", "value": 6.6 }
+        ],
+        "speed": [
+          { "t": "10:28:00", "value": 1.40 },
+          { "t": "10:28:30", "value": 1.41 },
+          { "t": "10:29:00", "value": 1.42 },
+          { "t": "10:29:30", "value": 1.41 },
+          { "t": "10:30:00", "value": 1.42 },
+          { "t": "10:30:30", "value": 1.40 },
+          { "t": "10:31:00", "value": 1.38 },
+          { "t": "10:31:15", "value": 1.25 },
+          { "t": "10:31:30", "value": 0.62 },
+          { "t": "10:31:49", "value": 0.00 }
+        ]
+      },
+      "events": [
+        { "time": "10:31:42", "message": "Motor current abnormal", "severity": "critical" },
+        { "time": "10:31:44", "message": "Drive temperature high", "severity": "critical" },
+        { "time": "10:31:47", "message": "Abnormal vibration detected", "severity": "critical" },
+        { "time": "10:31:49", "message": "Elevator stopped", "severity": "critical" }
+      ],
+      "diagnostic": {
+        "fault": "Drive System Abnormality",
+        "subsystem": "Drive System",
+        "location": "Drive Module",
+        "probableCause": "Power-electronics / IGBT abnormality",
+        "severity": "HIGH",
+        "confidence": 94
+      },
+      "evidence": [
+        "Motor current exceeded the simulated normal threshold (18.7 A vs 14.0 A limit)",
+        "Drive temperature increased significantly (91°C, simulated critical threshold 75°C)",
+        "Vibration became abnormal (6.8 mm/s, simulated critical threshold 4.5 mm/s)",
+        "Elevator stopped after the anomaly sequence",
+        "Event sequence is consistent with the simulated drive-fault pattern"
+      ],
+      "rootCauseChain": [
+        "Motor Current Spike",
+        "Electrical Load Increase",
+        "Drive Temperature Increase",
+        "Power Electronics Stress",
+        "Probable IGBT Abnormality",
+        "Drive System Fault"
+      ],
+      "recommendedActions": [
+        "Take the affected elevator out of service.",
+        "Inspect the drive module.",
+        "Check the cooling system.",
+        "Inspect relevant power electronics.",
+        "Verify telemetry after inspection/repair.",
+        "Perform controlled testing before returning the elevator to service."
+      ],
+      "historicalPattern": {
+        "description": "High motor current + elevated temperature + vibration → Drive-system abnormality",
+        "similarity": 91,
+        "occurrences": 6
+      }
+    },
+    "door_mechanism": {
+      "id": "door_mechanism",
+      "label": "Scenario B — Door Mechanism Abnormality",
+      "shortLabel": "Door Mechanism",
+      "defaultElevator": "KONE-E118",
+      "healthScore": 64,
+      "telemetrySnapshot": {
+        "motorCurrent": { "value": 7.9, "unit": "A", "status": "normal" },
+        "temperature": { "value": 48, "unit": "°C", "status": "normal" },
+        "vibration": { "value": 1.3, "unit": "mm/s", "status": "normal" },
+        "voltage": { "value": 378, "unit": "V", "status": "normal" },
+        "speed": { "value": 1.40, "unit": "m/s", "status": "normal" },
+        "doorStatus": { "value": "Delayed Close", "unit": "", "status": "warning" }
+      },
+      "thresholds": {
+        "doorCurrent": 3.2,
+        "doorCycleTime": 4.5
+      },
+      "series": {
+        "doorCurrent": [
+          { "t": "09:44:00", "value": 1.8 },
+          { "t": "09:44:30", "value": 1.9 },
+          { "t": "09:45:00", "value": 2.0 },
+          { "t": "09:45:30", "value": 2.4 },
+          { "t": "09:46:00", "value": 2.9 },
+          { "t": "09:46:30", "value": 3.3 },
+          { "t": "09:47:00", "value": 3.6 },
+          { "t": "09:47:20", "value": 3.9 },
+          { "t": "09:47:35", "value": 4.1 }
+        ],
+        "doorCycleTime": [
+          { "t": "09:44:00", "value": 2.1 },
+          { "t": "09:44:30", "value": 2.2 },
+          { "t": "09:45:00", "value": 2.4 },
+          { "t": "09:45:30", "value": 2.9 },
+          { "t": "09:46:00", "value": 3.4 },
+          { "t": "09:46:30", "value": 3.9 },
+          { "t": "09:47:00", "value": 4.4 },
+          { "t": "09:47:20", "value": 4.8 },
+          { "t": "09:47:35", "value": 5.1 }
+        ],
+        "temperature": [
+          { "t": "09:44:00", "value": 46 },
+          { "t": "09:45:00", "value": 46 },
+          { "t": "09:46:00", "value": 47 },
+          { "t": "09:47:00", "value": 48 },
+          { "t": "09:47:35", "value": 48 }
+        ],
+        "vibration": [
+          { "t": "09:44:00", "value": 1.1 },
+          { "t": "09:45:00", "value": 1.2 },
+          { "t": "09:46:00", "value": 1.2 },
+          { "t": "09:47:00", "value": 1.3 },
+          { "t": "09:47:35", "value": 1.3 }
+        ]
+      },
+      "events": [
+        { "time": "09:47:12", "message": "Door current increase detected", "severity": "warning" },
+        { "time": "09:47:20", "message": "Door close cycle time exceeded normal range", "severity": "warning" },
+        { "time": "09:47:35", "message": "Delayed door closure flagged", "severity": "warning" }
+      ],
+      "diagnostic": {
+        "fault": "Door Mechanism Abnormality",
+        "subsystem": "Door System",
+        "location": "Door Operator Assembly",
+        "probableCause": "Door operator belt wear / obstruction resistance increase",
+        "severity": "MEDIUM",
+        "confidence": 87
+      },
+      "evidence": [
+        "Door current exceeded the simulated normal threshold (4.1 A vs 3.2 A limit)",
+        "Door cycle time increased beyond the simulated normal range (5.1s vs 4.5s limit)",
+        "Motor current, temperature and vibration remained within normal simulated ranges",
+        "Event sequence is consistent with the simulated door-mechanism fault pattern"
+      ],
+      "rootCauseChain": [
+        "Door Current Increase",
+        "Mechanical Resistance Rise",
+        "Belt / Roller Wear Indicator",
+        "Delayed Door Closure",
+        "Probable Door Operator Degradation",
+        "Door Mechanism Fault"
+      ],
+      "recommendedActions": [
+        "Flag elevator for priority door-system inspection.",
+        "Inspect door operator belt and rollers for wear.",
+        "Check for physical obstructions in the door track.",
+        "Lubricate and re-calibrate the door operator.",
+        "Verify door cycle time after servicing.",
+        "Monitor door current for 24 hours before closing the ticket."
+      ],
+      "historicalPattern": {
+        "description": "Door current increase + delayed door closure → Door mechanism abnormality",
+        "similarity": 84,
+        "occurrences": 4
+      }
+    },
+    "vibration_abnormal": {
+      "id": "vibration_abnormal",
+      "label": "Scenario C — Abnormal Vibration",
+      "shortLabel": "Abnormal Vibration",
+      "defaultElevator": "KONE-E117",
+      "healthScore": 68,
+      "telemetrySnapshot": {
+        "motorCurrent": { "value": 9.4, "unit": "A", "status": "normal" },
+        "temperature": { "value": 58, "unit": "°C", "status": "normal" },
+        "vibration": { "value": 5.9, "unit": "mm/s", "status": "critical" },
+        "voltage": { "value": 381, "unit": "V", "status": "normal" },
+        "speed": { "value": 1.35, "unit": "m/s", "status": "warning" },
+        "doorStatus": { "value": "Normal", "unit": "", "status": "normal" }
+      },
+      "thresholds": {
+        "vibration": 4.5,
+        "speedVariance": 0.08
+      },
+      "series": {
+        "vibration": [
+          { "t": "09:08:00", "value": 1.4 },
+          { "t": "09:08:30", "value": 1.6 },
+          { "t": "09:09:00", "value": 2.0 },
+          { "t": "09:09:30", "value": 2.8 },
+          { "t": "09:10:00", "value": 3.6 },
+          { "t": "09:10:30", "value": 4.4 },
+          { "t": "09:11:00", "value": 5.0 },
+          { "t": "09:11:30", "value": 5.5 },
+          { "t": "09:12:03", "value": 5.9 }
+        ],
+        "motorCurrent": [
+          { "t": "09:08:00", "value": 8.9 },
+          { "t": "09:09:00", "value": 9.0 },
+          { "t": "09:10:00", "value": 9.1 },
+          { "t": "09:11:00", "value": 9.3 },
+          { "t": "09:12:03", "value": 9.4 }
+        ],
+        "temperature": [
+          { "t": "09:08:00", "value": 54 },
+          { "t": "09:09:00", "value": 55 },
+          { "t": "09:10:00", "value": 56 },
+          { "t": "09:11:00", "value": 57 },
+          { "t": "09:12:03", "value": 58 }
+        ],
+        "speed": [
+          { "t": "09:08:00", "value": 1.41 },
+          { "t": "09:09:00", "value": 1.40 },
+          { "t": "09:10:00", "value": 1.38 },
+          { "t": "09:11:00", "value": 1.36 },
+          { "t": "09:12:03", "value": 1.35 }
+        ]
+      },
+      "events": [
+        { "time": "09:10:30", "message": "Vibration trending above baseline", "severity": "warning" },
+        { "time": "09:11:30", "message": "Vibration exceeded simulated warning threshold", "severity": "warning" },
+        { "time": "09:12:03", "message": "Sustained abnormal vibration flagged", "severity": "warning" }
+      ],
+      "diagnostic": {
+        "fault": "Abnormal Vibration",
+        "subsystem": "Mechanical / Guidance System",
+        "location": "Car Guide Rail Assembly",
+        "probableCause": "Guide roller wear or rail alignment deviation",
+        "severity": "MEDIUM",
+        "confidence": 82
+      },
+      "evidence": [
+        "Vibration exceeded the simulated normal threshold (5.9 mm/s vs 4.5 mm/s limit)",
+        "Vibration trend shows a steady ramp rather than a sudden spike",
+        "Speed showed minor variance consistent with mechanical resistance",
+        "Motor current and temperature remained within normal simulated ranges",
+        "Event sequence is consistent with the simulated mechanical-wear pattern"
+      ],
+      "rootCauseChain": [
+        "Gradual Vibration Increase",
+        "Mechanical Resistance / Misalignment",
+        "Guide Roller or Rail Wear",
+        "Ride Quality Degradation",
+        "Probable Guidance System Wear",
+        "Abnormal Vibration Fault"
+      ],
+      "recommendedActions": [
+        "Schedule inspection of car guide rollers and rail alignment.",
+        "Measure rail plumbness and correct deviations if found.",
+        "Replace worn guide rollers if wear is confirmed.",
+        "Re-test ride vibration across full travel after servicing.",
+        "Continue monitoring vibration trend until resolved."
+      ],
+      "historicalPattern": {
+        "description": "Gradual vibration ramp without current/temperature rise → Guidance system wear",
+        "similarity": 76,
+        "occurrences": 3
+      }
+    },
+    "temperature_cooling": {
+      "id": "temperature_cooling",
+      "label": "Scenario D — Temperature / Cooling Anomaly",
+      "shortLabel": "Temperature / Cooling",
+      "defaultElevator": "KONE-E221",
+      "healthScore": 71,
+      "telemetrySnapshot": {
+        "motorCurrent": { "value": 10.1, "unit": "A", "status": "normal" },
+        "temperature": { "value": 79, "unit": "°C", "status": "warning" },
+        "vibration": { "value": 1.8, "unit": "mm/s", "status": "normal" },
+        "voltage": { "value": 379, "unit": "V", "status": "normal" },
+        "speed": { "value": 1.41, "unit": "m/s", "status": "normal" },
+        "doorStatus": { "value": "Normal", "unit": "", "status": "normal" }
+      },
+      "thresholds": {
+        "temperature": 75,
+        "coolingFanRpm": 1800
+      },
+      "series": {
+        "temperature": [
+          { "t": "08:48:00", "value": 52 },
+          { "t": "08:49:00", "value": 56 },
+          { "t": "08:50:00", "value": 61 },
+          { "t": "08:51:00", "value": 66 },
+          { "t": "08:52:00", "value": 71 },
+          { "t": "08:53:00", "value": 75 },
+          { "t": "08:54:00", "value": 77 },
+          { "t": "08:55:27", "value": 79 }
+        ],
+        "coolingFanRpm": [
+          { "t": "08:48:00", "value": 1850 },
+          { "t": "08:49:00", "value": 1820 },
+          { "t": "08:50:00", "value": 1790 },
+          { "t": "08:51:00", "value": 1740 },
+          { "t": "08:52:00", "value": 1700 },
+          { "t": "08:53:00", "value": 1650 },
+          { "t": "08:54:00", "value": 1600 },
+          { "t": "08:55:27", "value": 1580 }
+        ],
+        "motorCurrent": [
+          { "t": "08:48:00", "value": 9.8 },
+          { "t": "08:50:00", "value": 9.9 },
+          { "t": "08:52:00", "value": 10.0 },
+          { "t": "08:55:27", "value": 10.1 }
+        ],
+        "vibration": [
+          { "t": "08:48:00", "value": 1.6 },
+          { "t": "08:50:00", "value": 1.7 },
+          { "t": "08:52:00", "value": 1.7 },
+          { "t": "08:55:27", "value": 1.8 }
+        ]
+      },
+      "events": [
+        { "time": "08:52:10", "message": "Cooling fan RPM trending below baseline", "severity": "warning" },
+        { "time": "08:53:00", "message": "Drive temperature crossed simulated warning threshold", "severity": "warning" },
+        { "time": "08:55:27", "message": "Sustained elevated temperature flagged", "severity": "warning" }
+      ],
+      "diagnostic": {
+        "fault": "Temperature / Cooling Anomaly",
+        "subsystem": "Cooling System",
+        "location": "Machine Room Cooling Unit",
+        "probableCause": "Cooling fan underperformance / airflow restriction",
+        "severity": "MEDIUM",
+        "confidence": 85
+      },
+      "evidence": [
+        "Drive temperature exceeded the simulated normal threshold (79°C vs 75°C limit)",
+        "Cooling fan RPM trended downward while temperature climbed",
+        "Motor current, vibration and voltage remained within normal simulated ranges",
+        "Event sequence is consistent with the simulated cooling-degradation pattern"
+      ],
+      "rootCauseChain": [
+        "Cooling Fan RPM Decline",
+        "Reduced Airflow",
+        "Heat Dissipation Loss",
+        "Drive Temperature Rise",
+        "Probable Cooling Unit Underperformance",
+        "Temperature / Cooling Fault"
+      ],
+      "recommendedActions": [
+        "Inspect the machine room cooling fan and filters.",
+        "Check for airflow obstructions or blocked vents.",
+        "Verify fan power supply and bearing condition.",
+        "Clean or replace the cooling unit as needed.",
+        "Monitor temperature trend for 24 hours after servicing.",
+        "Schedule full inspection if temperature does not stabilize."
+      ],
+      "historicalPattern": {
+        "description": "Declining cooling fan RPM + rising temperature → Cooling system degradation",
+        "similarity": 79,
+        "occurrences": 5
+      }
+    }
+  },
+  "historicalPatterns": [
+    {
+      "pattern": "High motor current + elevated temperature + vibration",
+      "outcome": "Drive-system abnormality",
+      "occurrences": 6
+    },
+    {
+      "pattern": "Door current increase + delayed door closure",
+      "outcome": "Door mechanism abnormality",
+      "occurrences": 4
+    },
+    {
+      "pattern": "Gradual vibration ramp without current/temperature rise",
+      "outcome": "Guidance system wear",
+      "occurrences": 3
+    },
+    {
+      "pattern": "Declining cooling fan RPM + rising temperature",
+      "outcome": "Cooling system degradation",
+      "occurrences": 5
+    }
+  ]
+}
